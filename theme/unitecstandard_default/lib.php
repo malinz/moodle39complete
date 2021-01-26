@@ -41,36 +41,36 @@ function theme_unitecstandard_default_get_main_scss_content($theme) {
     
     $context = context_system::instance();
     $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/classic/pre.scss');
-    if ($filename && ($presetfile = $fs->get_file($context->id, 'theme_classic_var_01', 'preset', 0, '/', $filename))) {
+    if ($filename && ($presetfile = $fs->get_file($context->id, 'theme_unitecstandard_default', 'preset', 0, '/', $filename))) {
         $scss .= $presetfile->get_content();
     } else if ($filename == 'unitec-00.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-00.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-00.scss');
     } else if ($filename == 'unitec-01.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-01.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-01.scss');
     } else if ($filename == 'unitec-02.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-02.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-02.scss');
     } else if ($filename == 'unitec-03.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-03.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-03.scss');
     } else if ($filename == 'unitec-04.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-04.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-04.scss');
     } else if ($filename == 'unitec-05.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-05.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-05.scss');
     } else if ($filename == 'unitec-06.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-06.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-06.scss');
     } else if ($filename == 'unitec-07.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-07.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-07.scss');
     } else if ($filename == 'unitec-08.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-08.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-08.scss');
     } else if ($filename == 'unitec-09.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-09.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-09.scss');
     } else if ($filename == 'unitec-10.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/unitec-10.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/unitec-10.scss');
     } else if ($filename == 'police.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/police.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/police.scss');
     } else if ($filename == 'hawkins.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/hawkins.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/hawkins.scss');
     } else if ($filename == 'swift.scss') {
-        $scss .= file_get_contents($CFG->dirroot . '/theme/boost_var_1/scss/preset/swift.scss');
+        $scss .= file_get_contents($CFG->dirroot . '/theme/unitecstandard_default/scss/preset/swift.scss');
     } else {
         // Safety fallback - maybe new installs etc.
         $scss .= file_get_contents($CFG->dirroot . '/theme/classic/scss/preset/default.scss');
