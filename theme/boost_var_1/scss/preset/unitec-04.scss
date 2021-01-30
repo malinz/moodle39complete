@@ -1,0 +1,549 @@
+/*################### DEFAULT SCSS - BOOST VARIATIONS ######################################################*/
+
+// Bootstrap variables
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #373a3c !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+$blue: #1177d1 !default; //Default colour for drawer heading
+$indigo: #6610f2 !default;
+$purple: #613d7c !default;
+$pink: #e83e8c !default;
+$red: #d9534f !default;
+$orange: #f0ad4e !default;
+$yellow: #ff7518 !default;
+$green: #5cb85c !default;
+$teal: #20c997 !default;
+$cyan: #5bc0de !default;
+$primary: $blue !default;
+$secondary: $gray-800 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+// Options
+$enable-rounded: false !default;
+// Body
+$body-color: $gray-800 !default;
+// Fonts
+$font-size-base: 0.9375rem !default;
+$headings-font-weight: 300 !default;
+// Navbar
+$navbar-dark-hover-color: rgba($white, 1) !default;
+$navbar-light-hover-color: rgba($black, .9) !default;
+// Breadcrumbs
+$breadcrumb-padding-y: .25rem !default;
+$breadcrumb-padding-x: 0 !default;
+$breadcrumb-item-padding: .5rem !default;
+$breadcrumb-margin-bottom: 0 !default;
+$breadcrumb-bg: transparent !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
+// Alerts
+$alert-border-width: 0 !default;
+$theme-colors: (primary: $primary, secondary: $gray-200, success: $success, info: $info, warning: $orange, danger: $danger, light: $gray-100, dark: $gray-800);
+// Import FontAwesome.
+@import "fontawesome";
+// Import All of Bootstrap
+@import "bootstrap";
+// Import Core moodle CSS
+@import "moodle";
+
+// Preset CSS
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+}
+
+.filemanager-container,
+.filepicker-filelist {
+    @extend .border;
+}
+
+// Rounded user pictures
+.userpicture {
+    border-radius: 50%;
+}
+
+/*################### CUSTOM SCSS - BOOST VARIATIONS #######################################################*/
+
+/*###########################################################################################################
+##################### VARIABLES - CHANGE THEME COLOR AND IMAGES #############################################
+############################################################################################################*/
+
+/*######################################################
+######################## NAVBAR ########################
+#######################################################*/
+
+// Navbar colour and background image (fractal)
+nav.fixed-top {
+    padding: 5px 16px !important;
+    background-color: #1a2d4e !important;
+    background-image: url([[pix:theme|NavFractal-04]]); // Background image in Pix directory
+    // background-image: url('https://moodle.unitec.ac.nz/pluginfile.php/897385/mod_page/content/12/NavbarFractal.png'); // alternative web URL
+    background-size: cover;
+}
+
+/*######################################################
+######################## HEADER ########################
+#######################################################*/
+
+// Places Unitec Moodle Logo on the left-hand side of the header
+header .page-header-headings {
+    height: 80px;
+    margin: 5px 0px 15px 0px; // Use this to match the fractal and overlay heights
+    background-image: url([[pix:theme|UnitecLogo-01]]); // Background image in Pix directory
+    // background-image: url('https://moodle.unitec.ac.nz/pluginfile.php/897385/mod_page/content/12/UnitecLogoNew-02.png'); // alternative web URL
+    background-size: 173px 75px;
+    background-repeat: no-repeat;
+    background-position: 10px 5px; // Use this to position the Header Logo
+    padding-left: 200px;
+    }
+
+// Places Background Banner in header
+@media only screen and (min-width: 1050px) {
+    header .card {
+        background-image: url([[pix:theme|HeaderFade-04]]); // Background image in Pix directory
+        // background-image: url('https://moodle.unitec.ac.nz/pluginfile.php/897385/mod_page/content/12/KowhaiwhaiNew.png'); // alternative web URL
+        background-position: right top; // Fractal position
+        background-repeat: no-repeat; // Display fractal once only
+        background-attachment: scroll; // Scroll with page
+        background-size: auto 85px;
+    }
+}
+
+// Add overlay image over the Background Banner
+@media only screen and (min-width: 1050px) {
+    header#page-header div div.card div.card-body {
+        background-image: url([[pix:theme|Overlay-01]]); // Background image in Pix directory option 1
+        //background-image: url([[pix:theme|Overlay-02]]); // Background image in Pix directory option 2
+        //background-image: url([[pix:theme|Overlay-03]]); // Background image in Pix directory option 3
+        //background-image: url('https://moodle.unitec.ac.nz/pluginfile.php/897385/mod_page/content/12/UnitecLogoNew-02.png'); // alternative web URL
+        background-size: auto 83px;
+        background-position: right top; // Fractal position
+        background-repeat: no-repeat; // Display fractal once only
+        background-attachment: scroll; // Scroll with page
+    }
+}
+
+// define the  border under the logo and fractal
+/*header#page-header div.card div.card-body div.d-flex {
+    border-bottom-style: solid; //Border under the logo and fractal 
+	border-bottom-width: 10px !important;  // Border width
+	border-bottom-color: #006666 !important; // Border color
+    padding: 0px 0px 0px 5px;
+    //padding: 5px 20px 0px 20px;
+}*/
+
+// Background, margin and padding to settings action menu in the banner with editing on and off
+div.context-header-settings-menu div.action-menu div.action-menu-trigger {
+    background-color: #007ca3;
+    border: 0.5px solid #fff; // rgba(255, 255, 255, 0.5)
+    padding: 3px 5px 3px 5px;
+    margin: 0px 20px 0px 0px; //position the action menu dropdown within the header
+}
+
+// Removes solid border and background images from the action menu dropdown container and breadcrumb because .d-flex has no ID
+#page-header div.d-flex.flex-wrap, #page-header div.d-flex.flex-wrap div.ml-auto.d-flex, div.context-header-settings-menu div.action-menu div.menubar.d-flex {
+    border: none !important;
+    background-image: none !important;
+}
+
+/*#######################################################
+###################### BREADCRUMB ######################
+#######################################################*/
+
+// Breadcrumb background color and position
+ol.breadcrumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0px 8px 5px 8px;
+    margin: 0px 0px 0px 0px;
+}
+
+// Defines the breadcrumb background and separators
+/*#breadcrumb div.ml-auto.d-flex {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+}
+
+#page-header div.d-flex.flex-wrap {
+    margin-top: 5px;
+    background-color: #0A7B7B;
+    padding: 0px 5px 0px 5px;
+}
+
+// FontAwesome Caret breadcrumb separator
+li.breadcrumb-item+li.breadcrumb-item:before {
+    color: #fff !important;
+    font-family: FontAwesome;
+    content: "\f0da" !important; //fa-caret-right
+}*/
+
+/*######################################################
+###################### NAV DRAWER ######################
+#######################################################*/
+
+// Nav drawer header color without affecting text color
+#nav-drawer a.list-group-item.list-group-item-action.active {
+    background-color: #1a2d4e;
+    border-color: #1a2d4e;
+}
+
+// Nav drawer background color
+#nav-drawer {
+    background: #333 none repeat scroll 0 0;
+}
+
+/*###########################################################################################################
+##################### CONSTANTS - SIZES AND POSITIONS OF ELEMENTS ###########################################
+############################################################################################################*/
+
+/*######################################################
+###################### NAVBAR ##########################
+#######################################################*/
+
+// Changes site name  in the navbar to white with light gray hover effect
+.site-name {
+    color: #fff;
+    @include hover-focus {
+        color: #999;
+    }
+}
+
+// Background behind username, user picture and icons
+ul.navbar-nav.ml-auto li.nav-item {
+    background-color: transparent; // rgba(255, 255, 255, 0.5)
+    padding: 0px 5px 0px 5px;
+}
+
+// Removes background behind username and picture as it overlays the above background*/
+div.usermenu div.action-menu-trigger {
+    background-color: transparent;
+}
+
+// Color and hover color for the user name and caret in the navbar
+ul.nav li.nav-item div.usermenu div.action-menu div.menubar div.action-menu-trigger div.dropdown a.dropdown-toggle {
+    color: #fff;
+    @include hover-focus {
+        color: #999;
+    }
+}
+
+// Color and hover color for the icons in the navbar
+div.popover-region-toggle.nav-link i.icon, nav ul li div i.icon:before {
+    color: #fff !important;
+    @include hover-focus {
+        background: transparent;
+        color: #999 !important;
+    }
+}
+
+// Background color behind search icon
+div.d-none.d-lg-block {
+    background-color: transparent; // rgba(255, 255, 255, 0.5)
+    padding: 0px 5px 0px 5px;
+}
+
+// Color and hover color for the search icon in the navbar
+div.search-input-wrapper.nav-link i.icon {
+    color: #fff;
+}
+
+/*######################################################
+################ CUSTOM MENU FONT COLOR ################
+#######################################################*/
+
+// Custom menu font color and hover-focus color
+nav ul.navbar-nav.d-none.d-md-flex li.dropdown.nav-item a.dropdown-toggle.nav-link {
+    color: #fff;
+
+    @include hover-focus {
+        color: #999;
+    }
+}
+
+/*######################################################
+######################## HEADER ########################
+#######################################################*/
+
+// Overall position of the logo, course name and breadcrumb inside the main banner container
+header#page-header div.card-body {
+    padding: 0px !important;
+}
+
+// Defines the size and position of the course name in the header
+header .page-header-headings h1 {
+    font-size: x-large;
+    font-weight: normal;
+    color: #666;
+    margin-bottom: 0px;
+    position: relative;
+    top: 100%;
+    transform: translateY(-100%);
+    display: block;
+    background-color: rgba(255, 255, 255, 0.5); //for smaller screens so the course name is still readable over the banner
+    padding-right: 5px; // cosmetic puposes only - puts 5px space after the last letter in the course name
+}
+
+//Icon color and hover color for the settings action menu toggle in the banner with editing on and off
+div.context-header-settings-menu div.action-menu div.action-menu-trigger div.dropdown a.dropdown-toggle {
+    color: #fff;
+    @include hover-focus {
+        color: #999
+    }
+}
+
+// Removes the bottom padding from the header region to allow custom blocks directly under the header
+header#page-header div.col-12 {
+    padding: 16px 0px 0px 0px !important;
+}
+
+header {
+    margin: 30px 0px 0px 0px !important;
+}
+
+/*#######################################################
+###################### BREADCRUMB ######################
+#######################################################*/
+
+//Breadcrumb link font color
+ol.breadcrumb li.breadcrumb-item a, ol.breadcrumb li.breadcrumb-item.dimmed-text a {
+    color: #666;
+    @include hover-focus {
+        color: #333
+    }
+}
+
+// Breadcrumb font color
+ol.breadcrumb li.breadcrumb-item {
+    color: #666;
+}
+
+/*######################################################
+###################### NAV DRAWER ######################
+#######################################################*/
+
+// Nav container padding
+#nav-container.container {
+    padding: 0px;
+}
+
+// Nav drawer padding
+div#nav-drawer {
+    padding: 16px 16px 16px 16px !important;
+}
+
+/*######################################################
+##################### PAGE CONTENT #####################
+#######################################################*/
+
+// Removes the top 50px margin from the page
+div#page {
+    margin: 0px !important;
+}
+
+// Removes the bottom padding from the page content
+div#page-content {
+    padding: 0px !important;
+}
+
+// Removes the bottom padding from the page wrapper
+div#page-wrapper {
+    padding: 0px !important;
+}
+
+// Removes the bottom margin from region-main
+section#region-main {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+// Removes the side padding from region-main-box
+div#region-main-box {
+    padding: 0px !important;
+}
+
+/*######################################################
+######################## FOOTER ########################
+#######################################################*/
+
+// footer padding
+footer#page-footer {
+    padding: 0px 0px 16px 0px !important;
+}
+
+// footer html block controls color and hover-focus color
+footer div.action-menu-item {
+    color: #333 !important;
+}
+
+footer div.dropdown a,
+footer div.dropdown a i {
+    color: #333 !important;
+}
+
+/*######################################################
+###################### HTML BLOCKS  #####################
+#######################################################*/
+
+// Removes the bottom margin from html block regions
+section.block.block_html.card.mb-3 {
+    margin: 0px !important;
+}
+
+//Removes the padding in the custom block regions
+
+// Right Block Region
+#block-region-side-pre .block.block_html .card-body {
+    padding: 0px !important;
+}
+
+#block-region-side-pre .block .card-body .card-text {
+    margin: 0px !important;
+}
+
+// Top full width
+.top-fullwidth {
+    width: 100% !important;
+}
+
+#block-region-top-fullwidth .block.block_html .card-body {
+    padding: 0px !important;
+}
+
+#block-region-top-fullwidth .block .card-body .card-text {
+    margin: 0px !important;
+}
+
+// Upper full width
+.upper-fullwidth {
+    width: 100% !important;
+} 
+
+#block-region-upper-fullwidth .block.block_html .card-body {
+    padding: 0px !important;
+}
+
+#block-region-upper-fullwidth .block .card-body .card-text {
+    margin: 0px !important;
+}
+
+// Lower full width
+.lower-fullwidth {
+    width: 100% !important;
+}
+
+#block-region-lower-fullwidth .block.block_html .card-body {
+    padding: 0px!important;
+}
+
+#block-region-lower-fullwidth .block .card-body .card-text {
+    margin: 0px !important;
+}
+
+// Bottom full width
+.bottom-fullwidth {
+    width: 100% !important;
+}
+
+#block-region-bottom-fullwidth .block.block_html .card-body {
+    padding: 0px !important;
+}
+
+#block-region-bottom-fullwidth .block .card-body .card-text {
+    margin: 0px !important;
+}
+
+// Upper Nav Drawer
+.upper-navdrawer {
+    width: 100% !important;
+}
+
+#block-region-upper-navdrawer .block.block_html .card-body {
+    padding: 0px !important;
+}
+
+#block-region-upper-navdrawer .block .card-body .card-text {
+    margin: 0px !important;
+}
+
+// Lower Nav Drawer
+.lower-navdrawer {
+    width: 100% !important;
+    margin-top: 15px;
+}
+
+#block-region-lower-navdrawer .block.block_html .card-body {
+    padding: 0px !important;
+}
+
+#block-region-lower-navdrawer .block .card-body .card-text {
+    margin: 0px !important;
+}
+
+/*################### OPTIONAL #############################################################################*/
+
+/*######################################################
+####### CUSTOM MENU ICONS - UNCOMMENT AS NEEDED ########
+#######################################################*/
+
+/*
+// Declares the font family for the custom menu
+nav.navbar .navbar-nav .nav-item a:before {
+    font-family: FontAwesome;
+}
+
+//Schools Custom Menu
+nav.navbar .navbar-nav .nav-item {
+    &:nth-of-type(1) a.nav-link:before {
+        content: "\f19c"; //fa-bank
+    }
+}
+
+// Students Custom Menu
+nav.navbar .navbar-nav .nav-item {
+    &:nth-of-type(2) a.nav-link:before {
+        content: "\f19d"; //fa-graduation-cap
+    }
+}
+
+// Staff Custom Menu
+nav.navbar .navbar-nav .nav-item {
+    &:nth-of-type(3) a.nav-link:before {
+        content: "\f0c0"; //fa-users
+    }
+}
+
+// Help Custom Menu
+nav.navbar .navbar-nav .nav-item {
+    &:nth-of-type(4) a.nav-link:before {
+        content: "\f059"; //fa-question-circle
+    }
+}
+
+// My Courses Custom Menu
+nav.navbar .navbar-nav .nav-item {
+    &:nth-of-type(5) a.nav-link:before {
+        content: "\f0b1"; //fa-briefcase
+    }
+}
+
+// Language Custom Menu
+nav.navbar .navbar-nav .nav-item {
+    &:nth-of-type(6) a.nav-link:before {
+        content: "\f0e6"; //fa-comments-o
+    }
+}
+*/
